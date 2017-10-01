@@ -42,4 +42,19 @@ def check_prime(num):
     else :
         return False
         
-    
+
+def main():
+    """ to test module functionality """
+
+    sieve()
+    num = input('Input a number: ')
+    if prime[num]:
+        print 'Number is prime'
+    else:
+        print 'Number is not prime'
+
+
+
+
+if __name__=="__main__":
+    main()
