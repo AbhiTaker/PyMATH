@@ -7,14 +7,14 @@ prime = []
 MAX = int(1e6)
 
 def __init__():
-    """ intializing the prime list with true upto MAX"""
+    """ intializing the prime list with True value upto MAX"""
     
     for num in range(0,MAX+6):
             prime.append(True)
 
 
 def sieve():
-    """ function to find prime number efficently"""
+    """ function to find prime number efficiently"""
 
     __init__()
 
@@ -25,7 +25,7 @@ def sieve():
             
             while num2 <= MAX:
                 
-                prime[num2] = False                          # composite number stores false value
+                prime[num2] = False                          # composite number marked false
                 num2 += num 
 
 
