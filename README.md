@@ -1,2 +1,2 @@
 # PyMATH
-package consisting of pre-wriiten modules to do math operations in python
+package consisting of pre-written modules to do math operations in python
