@@ -2,7 +2,7 @@
 
 import math
 
-prime = []
+isPrime = []
 """ range upto which you want to calculate prime """
 MAX = int(1e6)
 
@@ -10,7 +10,7 @@ def __init__():
     """ intializing the prime list with True value upto MAX"""
     
     for num in range(0,MAX+6):
-            prime.append(True)
+            isPrime.append(True)
 
 
 def sieve():
@@ -20,12 +20,12 @@ def sieve():
 
     for num in range(2,MAX):
 
-        if prime[num] == True:
+        if isPrime[num] == True:
             num2 = 2*num
             
             while num2 <= MAX:
                 
-                prime[num2] = False                          # composite number marked false
+                isPrime[num2] = False                          # composite number marked false
                 num2 += num 
 
 
@@ -37,7 +37,7 @@ def check_prime(num):
     sieve() 
     """ calling sieve to store apt bool value in list[num] """
 
-    if prime[num] == True :
+    if isPrime[num] == True :
         return True
     else :
         return False
@@ -48,7 +48,7 @@ def main():
 
     sieve()
     num = input('Input a number: ')
-    if prime[num]:
+    if isPrime[num]:
         print 'Number is prime'
     else:
         print 'Number is not prime'
