@@ -5,12 +5,14 @@ import math
 isPrime = []
 """ range upto which you want to calculate prime """
 MAX = int(1e6)
+Factor = []
 
 def __init__():
     """ intializing the prime list with True value upto MAX"""
-    
-    for num in range(0,MAX+6):
+    for num in range(0, MAX+6):
             isPrime.append(True)
+            Factor.append(0)
+
 
 
 def sieve():
@@ -18,15 +20,14 @@ def sieve():
 
     __init__()
 
-    for num in range(2,MAX):
-
-        if isPrime[num] == True:
+    for num in range(2, MAX):
+        if isPrime[num]:
             num2 = 2*num
             
             while num2 <= MAX:
-                
-                isPrime[num2] = False                          # composite number marked false
-                num2 += num 
+                isPrime[num2] = False                        # composite number marked false
+                Factor[num2] += 1
+                num2 += num
 
 
 
@@ -34,20 +35,23 @@ def sieve():
 def check_prime(num):
     """ primality check function """
 
-    sieve() 
-    """ calling sieve to store apt bool value in list[num] """
+    sieve()
 
-    if isPrime[num] == True :
-        return True
-    else :
-        return False
+    return isPrime[num]
         
+def factor_count(num):
+    """ to count prime Factors of a number """
+
+    sieve()
+    return Factor[num]
+
+
 
 def main():
     """ to test module functionality """
 
-    sieve()
     num = input('Input a number: ')
+    print(factor_count(num))
     if isPrime[num]:
         print 'Number is prime'
     else:
@@ -56,5 +60,5 @@ def main():
 
 
 
-if __name__=="__main__":
+if __name__ == "__main__":
     main()
