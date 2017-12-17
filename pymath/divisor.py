@@ -14,5 +14,16 @@ def count(num):
 
     return ctr
 
+def div_list(num):
+    """ function to return the list of divisors """
+    div = []
+
+    for i in range(1, num+1):
+
+        if num % i == 0:
+            div.append(i)
+
+    return div
+
 
     
