@@ -7,18 +7,17 @@ isPrime = []
 MAX = int(1e6)
 Factor = []
 
-def __init__():
+def init():
     """ intializing the prime list with True value upto MAX"""
+    
     for num in range(0, MAX+6):
-            isPrime.append(True)
-            Factor.append(0)
+        isPrime.append(True)
+        Factor.append(0)
 
 
 
 def sieve():
     """ function to find prime number efficiently"""
-
-    __init__()
 
     for num in range(2, MAX):
         if isPrime[num]:
@@ -35,30 +34,19 @@ def sieve():
 def check_prime(num):
     """ primality check function """
 
-    sieve()
-
     return isPrime[num]
         
 def factor_count(num):
     """ to count prime Factors of a number """
 
-    sieve()
     return Factor[num]
 
 
-
 def main():
-    """ to test module functionality """
-
-    num = input('Input a number: ')
-    print(factor_count(num))
-    if isPrime[num]:
-        print 'Number is prime'
-    else:
-        print 'Number is not prime'
-
-
-
+    init()
+    sieve()
 
 if __name__ == "__main__":
     main()
+
+
