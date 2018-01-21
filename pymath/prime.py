@@ -9,7 +9,6 @@ Factor = []
 
 def init():
     """ intializing the prime list with True value upto MAX"""
-    
     for num in range(0, MAX+6):
         isPrime.append(True)
         Factor.append(0)
@@ -18,11 +17,9 @@ def init():
 
 def sieve():
     """ function to find prime number efficiently"""
-
     for num in range(2, MAX):
         if isPrime[num]:
             num2 = 2*num
-            
             while num2 <= MAX:
                 isPrime[num2] = False                        # composite number marked false
                 Factor[num2] += 1
@@ -33,12 +30,10 @@ def sieve():
 
 def check_prime(num):
     """ primality check function """
-
     return isPrime[num]
         
 def factor_count(num):
     """ to count prime Factors of a number """
-
     return Factor[num]
 
 
