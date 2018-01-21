@@ -22,4 +22,23 @@ def div_list(num):
     return div
 
 
-    
+def gcd(num1, num2):
+    """ function to return HCF of two numbers """
+    if num2 == 0:
+        return num1
+    else:
+        return gcd(num2, num1%num2)
+
+def lcm(num1, num2):
+    """ function to return LCM of two numbers """
+    answer = (num1*num2) / gcd(num1, num2)
+
+
+def gcd_list(arr):
+    """ function to return HCF of list of numbers """
+    answer = arr[0]
+    for i in arr:
+        answer = gcd(answer, i)
+
+    return answer
+
